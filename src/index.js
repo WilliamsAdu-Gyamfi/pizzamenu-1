@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-
 const pizzaData = [
   {
     name: "Focaccia",
@@ -47,9 +46,31 @@ const pizzaData = [
   },
 ];
 
-
+//Building Components
 const App = function () {
-  return <h1>Hello React!</h1>;
+  return (
+    <div>
+      <h1>Hello React!</h1>
+      <Pizza />
+      <Pizza />
+      <Pizza />
+      <Ingredients />
+    </div>
+  );
+};
+
+const Pizza = function () {
+  return (
+    <div>
+      <img src="pizzas/funghi.jpg" alt="pizza" />
+      <h2>Pizza Funghi</h2>
+      <p>Tomato, mozarella, mushrooms, and onion</p>
+    </div>
+  );
+};
+
+const Ingredients = function () {
+  return <h3>Ingredients</h3>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
