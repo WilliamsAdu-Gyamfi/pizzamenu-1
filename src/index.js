@@ -46,15 +46,12 @@ const pizzaData = [
   },
 ];
 
-//Building Components
 const App = function () {
   return (
     <div>
-      <h1>Hello React!</h1>
+      <h1>Hello! React</h1> <Pizza />
       <Pizza />
       <Pizza />
-      <Pizza />
-      <Ingredients />
     </div>
   );
 };
@@ -62,15 +59,12 @@ const App = function () {
 const Pizza = function () {
   return (
     <div>
-      <img src="pizzas/funghi.jpg" alt="pizza" />
-      <h2>Pizza Funghi</h2>
-      <p>Tomato, mozarella, mushrooms, and onion</p>
+      {" "}
+      <h2>Pizza salamino</h2>
+      <img src="pizzas/salamino.jpg" alt="salamino" />
+      <p>Tomato, mozarella, and pepperoni</p>
     </div>
   );
-};
-
-const Ingredients = function () {
-  return <h3>Ingredients</h3>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
