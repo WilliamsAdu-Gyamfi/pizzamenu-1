@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./index.css";
 
 const pizzaData = [
   {
@@ -48,7 +49,7 @@ const pizzaData = [
 
 const App = function () {
   return (
-    <div>
+    <div clasName="container">
       <Header />
       <Menu />
       <Footer />
@@ -57,17 +58,24 @@ const App = function () {
 };
 
 const Header = function () {
-  return <h1>Papa Yaw Eatry</h1>;
+  //  const style = { color: "green", fontFamily: "cursive", fontSize: 45 };
+  const style = {};
+  // return <h1 style={style} className="Header">Papa Yaw Eatry</h1>;
+  return (
+    <header className="header">
+      <h1 style={style}>Papa Yaw Eatry</h1>
+    </header>
+  );
 };
 
 const Menu = function () {
   return (
-    <div>
+    <main className="menu">
       <h2>Our Menu</h2>
       <Pizza />
       <Pizza />
       <Pizza />
-    </div>
+    </main>
   );
 };
 
@@ -77,17 +85,17 @@ const Footer = function () {
   const closeHour = 22;
   console.log(hour);
 
-  if (hour >= openHour && hour <= closeHour) alert("We are Open");
-  else alert("Closed!");
+  // if (hour >= openHour && hour <= closeHour) alert("We are Open");
+  // else alert("Closed!");
 
-  return <footer>We are Open!</footer>;
+  return <footer className="footer">We are Open!</footer>;
 };
 
 const Pizza = function () {
   return (
     <div>
       {" "}
-      <h2>Pizza salamino</h2>
+      <h3>Pizza salamino</h3>
       <img src="pizzas/salamino.jpg" alt="salamino" />
       <p>Tomato, mozarella, and pepperoni</p>
     </div>
