@@ -50,7 +50,6 @@ const App = function () {
   return (
     <div>
       <Header />
-
       <Menu />
       <Footer />
     </div>
@@ -73,6 +72,14 @@ const Menu = function () {
 };
 
 const Footer = function () {
+  const hour = new Date().getHours();
+  const openHour = 9;
+  const closeHour = 22;
+  console.log(hour);
+
+  if (hour >= openHour && hour <= closeHour) alert("We are Open");
+  else alert("Closed!");
+
   return <footer>We are Open!</footer>;
 };
 
