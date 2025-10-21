@@ -72,7 +72,7 @@ const Menu = function () {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      <Pizza
+      {/*<Pizza
         name="Pizza Salamino"
         ingredients="Tomato, mozarella, and pepperoni"
         // price="10"
@@ -87,6 +87,25 @@ const Menu = function () {
         //price="6"
         price={12}
       />
+
+      <Pizza
+        name="Pizza Prosciutto"
+        ingredients="Tomato, mozarella, ham, aragula, and burrata cheese"
+        photoName="pizzas/prosciutto.jpg"
+        //price="6"
+        price={13}
+      /> */}{" "}
+      .
+      <div>
+        {pizzaData.map((pizza) => (
+          <Pizza
+            name={pizza.name}
+            photoName={pizza.photoName}
+            ingredients={pizza.ingredients}
+            pice={pizza.price}
+          />
+        ))}
+      </div>
     </main>
   );
 };
