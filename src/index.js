@@ -69,6 +69,9 @@ const Header = function () {
 };
 
 const Menu = function () {
+  const pizzas = pizzaData;
+  const numPizzas = pizzas.length;
+
   return (
     <main className="menu">
       <h2>Our Menu</h2>
@@ -95,9 +98,9 @@ const Menu = function () {
         //price="6"
         price={13}
       /> */}{" "}
-      .
-      <ul className="pizzas">
-        {/*pizzaData.map((pizza) => (
+      {numPizzas > 0 && (
+        <ul className="pizzas">
+          {/*pizzaData.map((pizza) => (
           <Pizza
             name={pizza.name}
             photoName={pizza.photoName}
@@ -106,10 +109,11 @@ const Menu = function () {
           />
         ))*/}
 
-        {pizzaData.map((pizza) => (
-          <Pizza pizzaObj={pizza} key={pizza.name} />
-        ))}
-      </ul>
+          {pizzaData.map((pizza) => (
+            <Pizza pizzaObj={pizza} key={pizza.name} />
+          ))}
+        </ul>
+      )}
     </main>
   );
 };
@@ -165,10 +169,8 @@ const Footer = function () {
 
   return (
     <footer className="footer">
-      {isOpen && hour}
       <div className="order">
-        {" "}
-        <p>We are Open! until {closeHour}:00. Visit Us!</p>
+        {isOpen && <p>We are Open! until {closeHour}:00. Visit Us!</p>}{" "}
         <button className="btn">Order!</button>
       </div>
     </footer>
