@@ -70,6 +70,7 @@ const Header = function () {
 
 const Menu = function () {
   const pizzas = pizzaData;
+  // const pizzas = [];
   const numPizzas = pizzas.length;
 
   return (
@@ -98,7 +99,7 @@ const Menu = function () {
         //price="6"
         price={13}
       /> */}{" "}
-      {numPizzas > 0 && (
+      {numPizzas > 0 ? (
         <ul className="pizzas">
           {/*pizzaData.map((pizza) => (
           <Pizza
@@ -113,6 +114,8 @@ const Menu = function () {
             <Pizza pizzaObj={pizza} key={pizza.name} />
           ))}
         </ul>
+      ) : (
+        <p>We are close!</p>
       )}
     </main>
   );
