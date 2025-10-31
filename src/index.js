@@ -157,14 +157,22 @@ const Pizza = function (props) {
 };
 const Footer = function () {
   const hour = new Date().getHours();
-  const openHour = 9;
-  const closeHour = 22;
-  console.log(hour);
-
+  const openHour = 11;
+  const closeHour = 23;
+  const isOpen = (hour) => openHour && hour <= closeHour;
   // if (hour >= openHour && hour <= closeHour) alert("We are Open");
   // else alert("Closed!");
 
-  return <footer className="footer">We are Open!</footer>;
+  return (
+    <footer className="footer">
+      {isOpen && hour}
+      <div className="order">
+        {" "}
+        <p>We are Open! until {closeHour}:00. Visit Us!</p>
+        <button className="btn">Order!</button>
+      </div>
+    </footer>
+  );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
