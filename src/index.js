@@ -150,6 +150,7 @@ const Pizza = function () {
 }
 
 const Pizza = function (props) {
+  if (props.pizzaObj.soldOut) return null;
   return (
     <ul className="pizza">
       {" "}
@@ -169,15 +170,12 @@ const Footer = function () {
   const isOpen = (hour) => openHour && hour <= closeHour;
   // if (hour >= openHour && hour <= closeHour) alert("We are Open");
   // else alert("Closed!");
-
-  return (
-    <footer className="footer">
-      <div className="order">
-        {isOpen && <p>We are Open! until {closeHour}:00. Visit Us!</p>}{" "}
-        <button className="btn">Order!</button>
-      </div>
-    </footer>
-  );
+  <footer className="footer">
+    <div className="order">
+      {isOpen && <p>We are Open! until {closeHour}:00. Visit Us!</p>}{" "}
+      <button className="btn">Order!</button>
+    </div>
+  </footer>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
